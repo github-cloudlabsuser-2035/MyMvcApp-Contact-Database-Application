@@ -1,66 +1,98 @@
-using System.Diagnostics;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using MyMvcApp.Models;
 
-namespace MyMvcApp.Controllers;
-
-public class UserController : Controller
+namespace MyMvcApp.Controllers
 {
-    public static System.Collections.Generic.List<User> userlist = new System.Collections.Generic.List<User>();
+    public class UserController : Controller
+    {
+        private static List<User> users = new List<User>();
 
-        // GET: User
-        public ActionResult Index()
+        // GET: /User/
+        public IActionResult Index()
         {
-            // Implement the Index method here
+            return View(users);
         }
 
-        // GET: User/Details/5
-        public ActionResult Details(int id)
+        // GET: /User/Create
+        public IActionResult Create()
         {
-            // Implement the details method here
+            return View();
         }
 
-        // GET: User/Create
-        public ActionResult Create()
-        {
-            //Implement the Create method here
-        }
-
-        // POST: User/Create
+        // POST: /User/Create
         [HttpPost]
-        public ActionResult Create(User user)
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(User user)
         {
-            // Implement the Create method (POST) here
+            if (ModelState.IsValid)
+            {
+                users.Add(user);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(user);
         }
 
-        // GET: User/Edit/5
-        public ActionResult Edit(int id)
+        // GET: /User/Edit/5
+        public IActionResult Edit(int id)
         {
-            // This method is responsible for displaying the view to edit an existing user with the specified ID.
-            // It retrieves the user from the userlist based on the provided ID and passes it to the Edit view.
+            var user = users.Find(u => u.Id == id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return View(user);
         }
 
-        // POST: User/Edit/5
+        // POST: /User/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, User user)
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(int id, User user)
         {
-            // This method is responsible for handling the HTTP POST request to update an existing user with the specified ID.
-            // It receives user input from the form submission and updates the corresponding user's information in the userlist.
-            // If successful, it redirects to the Index action to display the updated list of users.
-            // If no user is found with the provided ID, it returns a HttpNotFoundResult.
-            // If an error occurs during the process, it returns the Edit view to display any validation errors.
+            if (id != user.Id)
+            {
+                return BadRequest();
+            }
+
+            if (ModelState.IsValid)
+            {
+                var existingUser = users.Find(u => u.Id == id);
+                if (existingUser == null)
+                {
+                    return NotFound();
+                }
+
+                existingUser.Name = user.Name;
+                existingUser.Email = user.Email;
+                return RedirectToAction(nameof(Index));
+            }
+            return View(user);
         }
 
-        // GET: User/Delete/5
-        public ActionResult Delete(int id)
+        // GET: /User/Delete/5
+        public IActionResult Delete(int id)
         {
-            // Implement the Delete method here
+            var user = users.Find(u => u.Id == id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return View(user);
         }
 
-        // POST: User/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, IFormCollection collection)
+        // POST: /User/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteConfirmed(int id)
         {
-            // Implement the Delete method (POST) here
+            var user = users.Find(u => u.Id == id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            users.Remove(user);
+            return RedirectToAction(nameof(Index));
         }
+    }
 }
