@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "a1ztVyDJ4p4=",
+  "dgSpecHash": "oEv1vgTX5Wc=",
   "success": true,
   "projectFilePath": "C:\\Users\\azureuser\\GitHub Copilot\\MyMvcApp-Contact-Database-Application\\MyMvcApp.csproj",
   "expectedPackageFiles": [
@@ -97,16 +97,5 @@
     "C:\\Users\\azureuser\\.nuget\\packages\\xunit.extensibility.execution\\2.4.1\\xunit.extensibility.execution.2.4.1.nupkg.sha512",
     "C:\\Users\\azureuser\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.3\\xunit.runner.visualstudio.2.4.3.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "MyMvcApp depends on Microsoft.AspNetCore.Mvc.NewtonsoftJson (>= 8.0.0-preview.7.23375.6) but Microsoft.AspNetCore.Mvc.NewtonsoftJson 8.0.0-preview.7.23375.6 was not found. An approximate best match of Microsoft.AspNetCore.Mvc.NewtonsoftJson 8.0.0-preview.7.23375.9 was resolved.",
-      "libraryId": "Microsoft.AspNetCore.Mvc.NewtonsoftJson",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }

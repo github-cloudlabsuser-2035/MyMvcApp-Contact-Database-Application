@@ -5922,7 +5922,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 8.0.0-preview.7.23375.6",
+      "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 8.0.0-preview.7.23375.9",
       "Microsoft.NET.Test.Sdk >= 17.3.2",
       "xunit >= 2.4.1",
       "xunit.runner.visualstudio >= 2.4.3"
@@ -5972,7 +5972,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
             "target": "Package",
-            "version": "[8.0.0-preview.7.23375.6, )"
+            "version": "[8.0.0-preview.7.23375.9, )"
           },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
@@ -6009,17 +6009,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "MyMvcApp depends on Microsoft.AspNetCore.Mvc.NewtonsoftJson (>= 8.0.0-preview.7.23375.6) but Microsoft.AspNetCore.Mvc.NewtonsoftJson 8.0.0-preview.7.23375.6 was not found. An approximate best match of Microsoft.AspNetCore.Mvc.NewtonsoftJson 8.0.0-preview.7.23375.9 was resolved.",
-      "libraryId": "Microsoft.AspNetCore.Mvc.NewtonsoftJson",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }

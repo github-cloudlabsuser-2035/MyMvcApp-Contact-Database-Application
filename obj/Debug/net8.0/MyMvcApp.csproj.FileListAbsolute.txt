@@ -148,6 +148,4 @@ C:\Users\azureuser\GitHub Copilot\MyMvcApp-Contact-Database-Application\obj\Debu
 C:\Users\azureuser\GitHub Copilot\MyMvcApp-Contact-Database-Application\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.MyMvcApp.props
 C:\Users\azureuser\GitHub Copilot\MyMvcApp-Contact-Database-Application\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MyMvcApp.props
 C:\Users\azureuser\GitHub Copilot\MyMvcApp-Contact-Database-Application\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\azureuser\GitHub Copilot\MyMvcApp-Contact-Database-Application\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\azureuser\GitHub Copilot\MyMvcApp-Contact-Database-Application\obj\Debug\net8.0\scopedcss\bundle\MyMvcApp.styles.css
-C:\Users\azureuser\GitHub Copilot\MyMvcApp-Contact-Database-Application\obj\Debug\net8.0\scopedcss\projectbundle\MyMvcApp.bundle.scp.css
